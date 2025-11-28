@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart</title>
+</head>
+<body>
+    <h2>🛒 Your Cart</h2>
+    {% if items %}
+        <ul>
+        {% for item in items %}
+            <li>{{ item.name }} - ₹{{ item.price }}</li>
+        {% endfor %}
+        </ul>
+        <h3>Total: ₹{{ total }}</h3>
+        <a href="/checkout">Checkout</a>
+    {% else %}
+        <p>No items in cart!</p>
+    {% endif %}
+    <br><br>
+    <a href="/">Back to Store</a>
+</body>
+</html>
